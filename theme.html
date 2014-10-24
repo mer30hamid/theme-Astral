@@ -22,7 +22,13 @@
 		<link rel="stylesheet" type="text/css" href="{{ assets('css/style-desktop.css') }}">
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		
+		<style type="text/css">
+			body	{
+				background-image:			url('assets['overlay.png']'),		url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %}{{ assets['background.jpg'] }}{% endif %}');
+				background-repeat:			repeat,							no-repeat;
+				background-size:			auto,							100% 100%;
+			}
+		</style>		
 		<!--   hhh
 		    {% if site.analytics %}
     <script>
