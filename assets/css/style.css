@@ -17,13 +17,14 @@
 			font-family:"BBCNassim";
 			src: url( "http://f.manmote.com/font/BBCNassim.eot" );
 			src: local( "☺" ),
-			url( "http://f.manmote.com/font/BBCNassim.woff" )
-			format( "woff" ),
-			url( "http://f.manmote.com/font/BBCNassim.ttf" )
-			format( "truetype" );
+				url("http://f.manmote.com/font/BBCNassim.woff") format( "woff" ),
+				url("http://f.manmote.com/font/BBCNassim.ttf") format("truetype");
+			font-weight: normal;
+			font-style: normal;
 		}
 
-
+		a, u {text-decoration: none;}
+		
 		body.is-loading *
 		{
 			-moz-transition: none !important;
