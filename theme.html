@@ -24,21 +24,22 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<style type="text/css">
 			body	{
-				background-image:			url('{{ assets('images/overlay.png') }}'),		url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %} {{ assets('images/background.jpg') }}{% endif %}');
-				background-repeat:			repeat,							no-repeat;
-				background-size:			auto,							100% 100%;
+				background-image:	url('{{ assets('images/overlay.png') }}'),	url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %} {{ assets('images/background.jpg') }}{% endif %}');
+				background-repeat:	repeat,	no-repeat;
+				background-size:auto, 100% 100%;
+				direction:rtl;
 			}
 			.bcf-content{display:none}
 			/********** FONT ************/
-			@font-face{
-				font-family:"BBCNassim";
-				src: url("{{ assets('fonts/BBCNassim.eot') }}");
-				src: local("☺"),
-					url("{{ assets('fonts/BBCNassim.woff') }}") format("woff"),
-					url("{{ assets('fonts/BBCNassim.ttf') }}") format("truetype");
-				font-weight: normal;
-				font-style: normal;
-			}
+				@font-face {
+					font-family:"BBCNassim";
+					src: url( "http://f.manmote.com/font/BBCNassim.eot" );
+					src: local( "☺" ),
+					url( "http://f.manmote.com/font/BBCNassim.woff" )
+					format( "woff" ),
+					url( "http://f.manmote.com/font/BBCNassim.ttf" )
+					format( "truetype" );
+				}
 		</style>		
 		<!--   hhh
 		    {% if site.analytics %}
