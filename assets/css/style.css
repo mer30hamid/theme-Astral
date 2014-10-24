@@ -442,6 +442,10 @@
 				position: relative;
 				display: block;
 			}
+		    #me #bio
+			{
+			width:60%;
+			}
 
 				#me .pic:before
 				{
