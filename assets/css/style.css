@@ -13,15 +13,15 @@
 /*********************************************************************************/
 
 	/********** FONT ************/
-		@font-face {
-			font-family:"BBCNassim";
-			src: url( "http://f.manmote.com/font/BBCNassim.eot" );
-			src: local( "☺" ),
-				url("http://f.manmote.com/font/BBCNassim.woff") format( "woff" ),
-				url("http://f.manmote.com/font/BBCNassim.ttf") format("truetype");
+		@font-face { 
+			font-family: "BBCNassim";
 			font-weight: normal;
-			font-style: normal;
+			src:
+				url("http://f.manmote.com/font/BBCNassim.eot") format("eot"),
+				url("http://f.manmote.com/font/BBCNassim.woff") format("woff"),
+				url("http://f.manmote.com/font/BBCNassim.ttf") format("truetype"); 
 		}
+
 
 		a, u {text-decoration: none;}
 		
@@ -41,7 +41,7 @@
 		
 	body,input,textarea,select
 	{
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: BBCNassim, Tahoma;
 		font-weight: 300;
 		color: #777777;
 	}
@@ -241,7 +241,7 @@
 		.posts h2 a, .posts h2 a:link, .posts h2 a:visited{
 			color:#fff;
 			font-family: BBCNassim, Tahoma;
-			font-size:1.2em;
+			font-size:1.1em;
 		}
 		.posts h2 a:hover{color:#D9D9CD;}
 		
