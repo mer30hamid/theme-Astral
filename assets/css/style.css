@@ -184,6 +184,7 @@ body {
   font-family: 'Lora', serif;
   height: 100%;
   width: 100%;
+  direction:ltr;
 }
 ul,
 li {
