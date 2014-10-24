@@ -17,11 +17,6 @@
 		<script type = "text/javascript" src="{{ assets('js/skel.min.js') }}"></script>
 		<script type = "text/javascript" src="{{ assets('js/init.js') }}"></script>
 
-		<link rel="stylesheet" href="http://cdn.jsdelivr.net/skeljs/0.4.6/skel-noscript.css" />
-		<link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ assets('css/style-desktop.css') }}">
-
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<style type="text/css">
 			body	{
 				background-image:	url('{{ assets('images/overlay.png') }}'),	url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %} {{ assets('images/background.jpg') }}{% endif %}');
@@ -40,7 +35,14 @@
 					url( "http://f.manmote.com/font/BBCNassim.ttf" )
 					format( "truetype" );
 				}
-		</style>		
+		</style>
+
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/skeljs/0.4.6/skel-noscript.css" />
+		<link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ assets('css/style-desktop.css') }}">
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		
 		<!--   hhh
 		    {% if site.analytics %}
     <script>
