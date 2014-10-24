@@ -12,6 +12,18 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+	/********** FONT ************/
+		@font-face {
+			font-family:"BBCNassim";
+			src: url( "http://f.manmote.com/font/BBCNassim.eot" );
+			src: local( "☺" ),
+			url( "http://f.manmote.com/font/BBCNassim.woff" )
+			format( "woff" ),
+			url( "http://f.manmote.com/font/BBCNassim.ttf" )
+			format( "truetype" );
+		}
+
+
 		body.is-loading *
 		{
 			-moz-transition: none !important;
@@ -224,10 +236,11 @@
 			color:#fff;
 			padding:0.3em 0.3em 0.3em 0;
 		}
+		
 		.posts h2 a, .posts h2 a:link, .posts h2 a:visited{
 			color:#fff;
 			font-family: BBCNassim, Tahoma;
-			font-size:1.7em;
+			font-size:1.2em;
 		}
 		.posts h2 a:hover{color:#D9D9CD;}
 		
