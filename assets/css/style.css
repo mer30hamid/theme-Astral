@@ -236,13 +236,11 @@
 			background-color:#434303;
 			color:#fff;
 			padding:0.3em 0.3em 0.3em 0;
-			font-family: BBCNassim, Tahoma;
+			font:normal normal 1.1em BBCNassim;
 		}
 		
 		.posts h2 a, .posts h2 a:link, .posts h2 a:visited{
 			color:#fff;
-			font-family: BBCNassim, Tahoma;
-			font-size:1.1em;
 		}
 		.posts h2 a:hover{color:#D9D9CD;}
 		
