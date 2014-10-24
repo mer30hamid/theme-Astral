@@ -1,43 +1,43 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8">
-    <title>
-      {% if is_login %}Login
-      {% elif is_home %}{{ site.author }}
-      {% elif is_tag %}{{ tag }}
-      {% elif post %}{{ post.title }}
-      {% endif %}
-      | {{ site.name }}
-    </title>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>
+		{% if is_login %}Login
+		{% elif is_home %}{{ site.author }}
+		{% elif is_tag %}{{ tag }}
+		{% elif post %}{{ post.title }}
+		{% endif %}
+		| {{ site.name }}
+	</title>
+		
+		
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="http:///ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/skeljs/0.4.6/skel.min.js"></script>
+		<!--script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script-->
 
-    {{ header_meta }}
-
-    <link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
-
-    <!--[if IE 7]>
-      <link href="http://postach.io/static/themes/_assets/fontawesome/css/font-awesome-ie7.min.css" rel="stylesheet">
-    <![endif]-->
-
-    <!--
-    <style>
-      /**
-       * Your custom override CSS goes here. If you wanted to override the default link colour and hover state, you would do this:
-       *
-       *  a {
-       *      color: #333; /* Override the default colour with a not-quite-black that is easy on the eyes on white screens */
-       *  }
-       *
-       *  a:hover {
-       *      color: #545454; /* This will now change the hover state as well */
-       *  }
-       *
-       *  You can put anything you want to override in here, so be creative!
-       */
-    </style>
-    -->
-
-    {% if site.analytics %}
+		<!-- script src="js/init.js"></script -->
+		<script>
+		  (function(e){var t={resizeSpeed:600,fadeSpeed:300,sizeFactor:11.5,sizeMin:15,sizeMax:20};skel.init({reset:"full",pollOnce:true,breakpoints:{global:{range:"*",href:"css/style.css"},desktop:{range:"737-",href:"css/style-desktop.css",containers:1200,grid:{gutters:25},viewport:{width:1080,scalable:false}},mobile:{range:"-736",href:"css/style-mobile.css",containers:"100%",grid:{collapse:true,gutters:10},viewport:{scalable:false}}}});var n=e(window);n.on("load",function(){var r=e("body"),i=e("#main"),s=i.find(".panel"),o=e("html,body,window"),u=e("#footer"),a=e("#wrapper"),f=e("#nav"),l=f.find("a"),c=e(".jumplink"),h=e("form"),p=[],d=null,v=null,m=false,g=window.location.hash.substring(1);if(skel.vars.isTouch){t.fadeSpeed=0;t.resizeSpeed=0;l.find("span").remove()}if(skel.isActive("desktop")){r._resize=function(){var e=n.width()*n.height()/(1440*900);r.css("font-size",Math.min(Math.max(Math.floor(e*t.sizeFactor),t.sizeMin),t.sizeMax)+"pt");i.height(p[d].outerHeight());r._reposition()};r._reposition=function(){if(skel.vars.isTouch&&(window.orientation==0||window.orientation==180))a.css("padding-top",Math.max((n.height()-(p[d].outerHeight()+u.outerHeight()))/2-f.height(),30)+"px");else a.css("padding-top",(n.height()-p[v].height())/2-f.height()+"px")};s.each(function(s){var c=e(this),h=c.attr("id");p[h]=c;if(s==0){v=h;d=h}else c.hide();c._activate=function(e){if(m||d==h)return false;m=true;l.removeClass("active");l.filter('[href="#'+h+'"]').addClass("active");if(s==0)window.location.hash="#";else window.location.hash="#"+h;var c=parseInt(a.css("padding-top"))+p[h].outerHeight()+f.outerHeight()+u.outerHeight();if(c>n.height())a.addClass("tall");else a.removeClass("tall");u.fadeTo(t.fadeSpeed,1e-4);p[d].fadeOut(e?0:t.fadeSpeed,function(){d=h;o.animate({scrollTop:0},t.resizeSpeed,"swing");r._reposition();i.animate({height:p[d].outerHeight()},e?0:t.resizeSpeed,"swing",function(){u.fadeTo(e?0:t.fadeSpeed,1);p[d].fadeIn(e?0:t.fadeSpeed,function(){m=false})})})}});l.add(c).click(function(t){var n=e(this),r=n.attr("href"),i;if(r.substring(0,1)=="#"){t.preventDefault();t.stopPropagation();i=r.substring(1);if(i in p)p[i]._activate()}});n.resize(function(){if(!m)r._resize()});if(skel.vars.IEVersion<9)n.on("resize",function(){a.css("min-height",n.height())});if(h.length>0){if(skel.vars.IEVersion<10){e.fn.n33_formerize=function(){var t=new Array,n=e(this);n.find("input[type=text],textarea").each(function(){var t=e(this);if(t.val()==""||t.val()==t.attr("placeholder")){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}}).blur(function(){var t=e(this);if(t.attr("name").match(/_fakeformerizefield$/))return;if(t.val()==""){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}}).focus(function(){var t=e(this);if(t.attr("name").match(/_fakeformerizefield$/))return;if(t.val()==t.attr("placeholder")){t.removeClass("formerize-placeholder");t.val("")}});n.find("input[type=password]").each(function(){var t=e(this);var n=e(e("<div>").append(t.clone()).remove().html().replace(/type="password"/i,'type="text"').replace(/type=password/i,"type=text"));if(t.attr("id")!="")n.attr("id",t.attr("id")+"_fakeformerizefield");if(t.attr("name")!="")n.attr("name",t.attr("name")+"_fakeformerizefield");n.addClass("formerize-placeholder").val(n.attr("placeholder")).insertAfter(t);if(t.val()=="")t.hide();else n.hide();t.blur(function(t){t.preventDefault();var n=e(this);var r=n.parent().find("input[name="+n.attr("name")+"_fakeformerizefield]");if(n.val()==""){n.hide();r.show()}});n.focus(function(t){t.preventDefault();var n=e(this);var r=n.parent().find("input[name="+n.attr("name").replace("_fakeformerizefield","")+"]");n.hide();r.show().focus()});n.keypress(function(e){e.preventDefault();n.val("")})});n.submit(function(){e(this).find("input[type=text],input[type=password],textarea").each(function(t){var n=e(this);if(n.attr("name").match(/_fakeformerizefield$/))n.attr("name","");if(n.val()==n.attr("placeholder")){n.removeClass("formerize-placeholder");n.val("")}})}).bind("reset",function(n){n.preventDefault();e(this).find("select").val(e("option:first").val());e(this).find("input,textarea").each(function(){var t=e(this);var n;t.removeClass("formerize-placeholder");switch(this.type){case"submit":case"reset":break;case"password":t.val(t.attr("defaultValue"));n=t.parent().find("input[name="+t.attr("name")+"_fakeformerizefield]");if(t.val()==""){t.hide();n.show()}else{t.show();n.hide()}break;case"checkbox":case"radio":t.attr("checked",t.attr("defaultValue"));break;case"text":case"textarea":t.val(t.attr("defaultValue"));if(t.val()==""){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}break;default:t.val(t.attr("defaultValue"));break}});window.setTimeout(function(){for(x in t)t[x].trigger("formerize_sync")},10)});return n};h.n33_formerize()}}if(skel.vars.IEVersion<9)e(":last-child").addClass("last-child");n.trigger("resize");if(g&&g in p)p[g]._activate(true);a.fadeTo(400,1)}})})(jQuery)
+		</script>
+		
+		<script type="text/javascript">
+			var bcf_settings = { buttonText:'تماس با من', buttonTop:'30%', language:'fa_IR' };
+			(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0];	js = d.createElement(s); js.id = id; js.src = "https://bettercontactform.com/contact/media/3/a/3aec0e5beffbfd740d5b248bd9d32f2fe762e3bd.js"; fjs.parentNode.insertBefore(js, fjs); }(document, "script", "bcf-render"));
+		</script>		
+		<noscript>
+			<link rel="stylesheet" href="http://cdn.jsdelivr.net/skeljs/0.4.6/skel-noscript.css" />
+			<!-- link rel="stylesheet" href="css/style.css" / -- > <!-- hhh -->
+			<link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
+			<!--- link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" /-->
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		
+		<!--   hhh
+		    {% if site.analytics %}
     <script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '{{ site.analytics }}']);
@@ -49,198 +49,114 @@
     })();
     </script>
     {% endif %}
-  </head>
-  <body>
+		-->
+	</head>
+	<body>
 
     {% if is_login %}
 
       {{ login_form }}
 
     {% else  %}
+	
+		<!-- Wrapper-->
+			<div id="wrapper">
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#me" class="icon fa-home active"><span>خانه</span></a>
+						<a href="#work" class="icon fa-folder"><span>مطالب</span></a>
+						<a href="#contact" class="icon fa-envelope" rel="contactus"><span>تماس</span></a>
+						<a href="#" class="icon fa-twitter"><span>تویتر</span></a>
+					</nav>
 
-    <div class="row">
-      <div class="span4 header">
-        <div class="bg-img" style="background-image: url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %}{{ assets['background.jpg'] }}{% endif %}');"></div>
-        <div class="gradient"></div>
-        <div class="title">
-          <h1>{{ site.name }}</h1>
-          <ul class="social">
-            {% if site.twitter %}
-            <li>
-              <a href="{{ site.twitter }}" title="Twitter" target="_blank">
-                <i class="icon-twitter"></i> Twitter
-              </a>
-            </li>
-            {% endif %}
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Me -->
+							<article id="me" class="panel">
+								<header>
+									<h1>{{ site.name }}</h1>
+									
+									        {% if site.bio %}<p>{{ site.bio }}</p>{% endif %}
 
-            {% if site.facebook %}
-            <li>
-              <a href="{{ site.facebook }}" title="Facebook" target="_blank">
-                <i class="icon-facebook-sign"></i> Facebook
-              </a>
-            </li>
-            {% endif %}
+									
+								</header>
+								<a href="#work" class="jumplink pic">
+									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+									<img src="images/me.jpg" alt="" />
+								</a>
+							</article>
 
-            {% if site.googleplus %}
-            <li>
-              <a href="{{ site.googleplus }}?rel=author" title="Google+" target="_blank">
-                <i class="icon-google-plus"></i> Google+
-              </a>
-            </li>
-            {% endif %}
+						<!-- Work --> 
+							<article id="work" class="panel">
+								<header>
+									<h2>Work</h2>
+								</header>
+								<p>
+									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit. 
+									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
+									luctus elit eget interdum.
+								</p>
+								<section>
+									<div class="row">
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+										</div>
+										<div class="4u">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+										</div>
+									</div>
+								</section>
+							</article>
 
-            {% if site.linkedin %}
-            <li>
-              <a href="{{ site.linkedin }}" title="LinkedIn" target="_blank">
-                <i class="icon-linkedin"></i> LinkedIn
-              </a>
-            </li>
-            {% endif %}
-            <li>
-              <a href="{{ site.atom_url }}" title="RSS" target="_blank">
-                <i class="icon-rss"></i> RSS
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a class="logo" href="/">
-          <img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}" width="100%" height="100%" />
-        </a>
-        <div class="site-description">
-          <ul>
-          <li><a href="/">Blog</a></li>
-          {% if pages %}
-          {% for page in pages %}
-          <li><a href="{{ page.permalink }}" class="{{ set_active(page.permalink) }}">{{ page.title }}</a></li>
-          {% endfor %}
-          {% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="row wrapper">
+					</div>
+		
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+		
+			</div>
 
-      <div class="span4 spacer"></div>
-
-      {% if is_home or is_tag %}
-
-      <div class="span6 offset1 posts">
-
-          {% if is_tag %}
-          <h4 class="sub-heading span6">Showing all posts tagged {{ tag }}:</h4>
-          {% endif %}
-
-          {% if posts %}
-          {% for post in posts %}
-          <div class="post span6">
-            <div class="row">
-              <div class="span6">
-                <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-              </div>
-            </div>
-            <div class="post-body" data-type-cleanup="true">
-              {{ post.content }}
-            </div>
-            <div class="post-info">
-              <div class="info-left">
-                <p class="date">{{ post.created_at|format_date }}</p>
-              </div>
-              <div class="info-right">
-                <p class="read-more"><a href="{{ post.permalink }}">Read More &raquo;</a></p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-          {% if not is_tag %}
-          <div class="pagination span6">
-            {% if pagination.prev %}<a href="{{ pagination.prev }}" class="post-prev">&larr; View Previous Posts</a>{% endif %}
-            {% if pagination.next %}<a href="{{ pagination.next }}" class="post-next">View More Posts &rarr;</a>{% endif %}
-          </div>
-          {% endif %}
-          {% else %}
-          <h4 class="sub-heading span6">No Posts Yet :(</h4>
-          {% endif %}
-      </div>
-
-      {% elif post %}
-
-      <div class="span6 offset1 posts">
-        <div class="post whole span6">
-          <h1>{{ post.title }}</h1>
-          <div class="post-info">
-            <div class="info-left">
-              <p class="date">{{ post.created_at|format_date }}</p>
-            </div>
-            <div class="info-right">
-              <p class="comments">
-                <a href="/"><i class="icon-comment"></i> 0</a>
-              </p>
-            </div>
-          </div>
-          <div class="post-body">
-            <div class="post-content" data-type-cleanup="true">
-              {{ post.content }}
-            </div>
-
-            {% if post.type == 'link' %}
-            <p><a href="{{ post.url }}"><i class="icon-share"></i> {{ post.url }}</a></p>
-            {% endif %}
-
-            {{ theme.social.bar }}
-
-            {% if post.tags %}
-            <ul class="post-tags">
-            {% for tag in post.tags %}
-              <li><a href="/tag/{{ tag }}">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
-            {% endfor %}
-            </ul>
-            {% endif %}
-          </div>
-          <div class="post-footer">
-            <p class="back"><a href="/">&laquo; Go Back</a></p>
-          </div>
-          {% if site.disqus %}
-          <div class="post-comments">
-            <div id="disqus_thread"></div>
-            <script>
-              var disqus_shortname = '{{ site.disqus }}';
-              var disqus_url = '{{site.base_url}}{{ post.permalink }}';
-              (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-            </script>
-          </div>
-          {% endif %}
-        </div>
-      </div>
-
-    {% elif post.type == 'page' %}
-
-      <div class="span6 offset1 posts">
-        <div class="post whole span6">
-          <h1>{{ page.title }}</h1>
-          <div class="post-body" data-type-cleanup="true">
-            {{ page.content }}
-          </div>
-          <div class="post-footer">
-            <p class="back"><a href="/">&laquo; Go Back</a></p>
-          </div>
-        </div>
-      </div>
-
-    {% endif %}
-
-    </div>
-
-    {% endif %}
-
-    {{ footer_meta }}
-
-    <!-- bootstrap -->
-    <script src="http://postach.io/static/themes/_assets/bootstrap/js/bootstrap.min.js" /></script>
-    
-  </body>
+	</body>
 </html>
