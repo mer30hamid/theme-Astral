@@ -45,149 +45,143 @@
 		-->
 	</head>
 	<body>
-
     {% if is_login %}
-
       {{ login_form }}
-
     {% else  %}
-	
 		<!-- Wrapper-->
-			<div id="wrapper">
-				
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#me" class="icon fa-home active"><span>خانه</span></a>
-						<a href="#posts" class="icon fa-folder"><span>مطالب</span></a>
-						<a href="#contact" class="icon fa-envelope" rel="contactus"><span>تماس</span></a>
-						<a href="#" class="icon fa-twitter"><span>تویتر</span></a>
-					</nav>
-
+		<div id="wrapper">
+			<!-- Nav -->
+			<nav id="nav">
+				<a href="#me" class="icon fa-home active"><span>خانه</span></a>
+				<a href="#posts" class="icon fa-folder"><span>مطالب</span></a>
+				<a href="#contact" class="icon fa-envelope" rel="contactus"><span>تماس</span></a>
+				<a href="#" class="icon fa-twitter"><span>تویتر</span></a>
+			</nav>
+			
 				<!-- Main -->
-					<div id="main">
+				<div id="main">
+				
+					<!-- Me -->
+					<article id="me" class="panel">
+						<header>
+							<h1>{{ site.name }}</h1>
+									{% if site.bio %}<p id="bio">{{ site.bio }}</p>{% endif %}
+						</header>
+					<a href="#posts" class="jumplink pic">
+						<span class="arrow icon fa-chevron-right"><span>بازدید از مطالب من</span></span>
+						<img src="{{ site.avatar }}" alt="{{ site.author }}" />
+					</a>
+					</article>
+
+					<!-- posts --> 
+					<article id="posts" class="panel">
+						{% if is_home or is_tag %}
 						
-						<!-- Me -->
-							<article id="me" class="panel">
-								<header>
-									<h1>{{ site.name }}</h1>
-									
-									        {% if site.bio %}<p id="bio">{{ site.bio }}</p>{% endif %}
-
-									
-								</header>
-								<a href="#posts" class="jumplink pic">
-									<span class="arrow icon fa-chevron-right"><span>See my posts</span></span>
-									<img src="{{ site.avatar }}" alt="{{ site.author }}" />
-								</a>
-							</article>
-
-						<!-- posts --> 
-							<article id="posts" class="panel">
-							{% if is_home or is_tag %}
-							
-							<div class="posts">
-							  {% if is_tag %}
-								<h4 class="sub-heading span6">تمامی مطالب با برچسب {{ tag }}:</h4>
-							  {% endif %}
-							  
-							  {% if posts %}
-							  {% for post in posts %}
-								<header>
-									<h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-								</header>
-								<div class="post-body" data-type-cleanup="true">
-									{{ post.content }}
-								</div>
-								<section>
-									<div class="post-info">
-									  <div class="info-left">
-										<p class="date">{{ post.created_at|format_date }}</p>
-									  </div>
-									  <div class="info-right">
-										<p class="read-more"><a href="{{ post.permalink }}">Read More &raquo;</a></p>
-									  </div>
-									</div>								
-								</section>
+						  {% if is_tag %}
+							<h4 class="sub-heading span6">تمامی مطالب با برچسب {{ tag }}:</h4>
+						  {% endif %}
+						  
+						{% if posts %}
+						{% for post in posts %}
+						<div class="posts">
+							<header>
+								<h2><a href="{{ post.permalink }}#posts">{{ post.title }}</a></h2>
+							</header>
+							<div class="post-body" data-type-cleanup="true">
+								{{ post.content }}
 							</div>
-							   {% endfor %}
-							   {% if not is_tag %}
-							  <div class="pagination span6">
-								{% if pagination.prev %}<a href="{{ pagination.prev }}" class="post-prev">&larr; View Previous Posts</a>{% endif %}
-								{% if pagination.next %}<a href="{{ pagination.next }}" class="post-next">View More Posts &rarr;</a>{% endif %}
-							  </div>
-							   {% endif %}
-							  {% else %}
-							    <h4 class="sub-heading span6">هیچ مطلبی وجود ندارد :(</h4>
-							  {% endif %}
+							<section>
+								<div class="post-info">
+								  <div class="info-left">
+									<p class="date">{{ post.created_at|format_date }}</p>
+								  </div>
+								  <div class="info-right">
+									<p class="read-more"><a href="{{ post.permalink }}">ادامه مطلب &raquo;</a></p>
+								  </div>
+								</div>								
+							</section>
+						</div>	
+						{% endfor %}
+
+
+					   {% if not is_tag %}
+					  <div class="pagination span6">
+						{% if pagination.prev %}<a href="{{ pagination.prev }}" class="post-prev">&larr; مطالب قدیمی تر</a>{% endif %}
+						{% if pagination.next %}<a href="{{ pagination.next }}" class="post-next">مطالب جدید تر &rarr;</a>{% endif %}
+					  </div>
+					   {% endif %}
+					  {% else %}
+						<h4 class="sub-heading span6">هیچ مطلبی وجود ندارد :(</h4>
+					  {% endif %}
 
 						    {% elif post %}
 							   
 
-							   <div class="span6 offset1 posts">
-        <div class="post whole span6">
-          <h1>{{ post.title }}</h1>
-          <div class="post-info">
-            <div class="info-left">
-              <p class="date">{{ post.created_at|format_date }}</p>
-            </div>
-            <div class="info-right">
-              <p class="comments">
-                <a href="/"><i class="icon-comment"></i> 0</a>
-              </p>
-            </div>
-          </div>
-          <div class="post-body">
-            <div class="post-content" data-type-cleanup="true">
-              {{ post.content }}
-            </div>
+							    <div class="span6 offset1 posts">
+									<div class="post whole span6">
+									  <h1>{{ post.title }}</h1>
+										<div class="post-info">
+											<div class="info-left">
+											  <p class="date">{{ post.created_at|format_date }}</p>
+											</div>
+											<div class="info-right">
+											  <p class="comments">
+												<a href="/"><i class="icon-comment"></i> 0</a>
+											  </p>
+										</div>
+										</div>
+									  <div class="post-body">
+										<div class="post-content" data-type-cleanup="true">
+										  {{ post.content }}
+										</div>
 
-            {% if post.type == 'link' %}
-            <p><a href="{{ post.url }}"><i class="icon-share"></i> {{ post.url }}</a></p>
-            {% endif %}
+										{% if post.type == 'link' %}
+										<p><a href="{{ post.url }}#posts"><i class="icon-share"></i> {{ post.url }}</a></p>
+										{% endif %}
 
-            {{ theme.social.bar }}
+										{{ theme.social.bar }}
 
-            {% if post.tags %}
-            <ul class="post-tags">
-            {% for tag in post.tags %}
-              <li><a href="/tag/{{ tag }}">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
-            {% endfor %}
-            </ul>
-            {% endif %}
-          </div>
-          <div class="post-footer">
-            <p class="back"><a href="/">&laquo; Go Back</a></p>
-          </div>
-          {% if site.disqus %}
-          <div class="post-comments">
-            <div id="disqus_thread"></div>
-            <script>
-              var disqus_shortname = '{{ site.disqus }}';
-              var disqus_url = '{{site.base_url}}{{ post.permalink }}';
-              (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-            </script>
-          </div>
-          {% endif %}
-        </div>
-      </div>
+										{% if post.tags %}
+										<ul class="post-tags">
+										{% for tag in post.tags %}
+										  <li><a href="/tag/{{ tag }}">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
+										{% endfor %}
+										</ul>
+										{% endif %}
+									  </div>
+									  <div class="post-footer">
+										<p class="back"><a href="/">&laquo; Go Back</a></p>
+									  </div>
+									  {% if site.disqus %}
+									  <div class="post-comments">
+										 <div id="disqus_thread"></div>
+										 <script>
+										  var disqus_shortname = '{{ site.disqus }}';
+										  var disqus_url = '{{site.base_url}}{{ post.permalink }}';
+										  (function() {
+											var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+											dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+											(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+										  })();
+										 </script>
+									  </div>
+									  {% endif %}
+									</div>
+								</div>
 
-    {% elif post.type == 'page' %}
+								{% elif post.type == 'page' %}
 
-      <div class="span6 offset1 posts">
-        <div class="post whole span6">
-          <h1>{{ page.title }}</h1>
-          <div class="post-body" data-type-cleanup="true">
-            {{ page.content }}
-          </div>
-          <div class="post-footer">
-            <p class="back"><a href="/">&laquo; Go Back</a></p>
-          </div>
-        </div>
-      </div>
+								  <div class="span6 offset1 posts">
+									<div class="post whole span6">
+									  <h1>{{ page.title }}</h1>
+									  <div class="post-body" data-type-cleanup="true">
+										{{ page.content }}
+									  </div>
+									  <div class="post-footer">
+										<p class="back"><a href="/">&laquo; Go Back</a></p>
+									  </div>
+									</div>
+								  </div>
 
     {% endif %}
 							</article>
@@ -205,7 +199,7 @@
 						</ul>
 					</div>
 		
-			</div>
+		</div>
 
 	</body>
 </html>
