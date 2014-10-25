@@ -273,10 +273,6 @@
 		  float: left;
 		  text-align: left;
 		}
-		div.post div.post-info .info-right a {
-			background-color:#434303;
-			color:#fff;
-		}
 		div.post div.post-info p.date {
 		  color: #999999;
 		}
@@ -321,6 +317,32 @@
 		div.post div.post-body ul.post-tags li {
 		  margin: 0;
 		  padding: 0;
+		}
+		
+		div.post-comments {
+			color: #999999;
+			font-size: 16px;
+			min-height:610px;
+		}
+		div.post-comments a {
+		  color: #999999;
+		}
+		div.post-comments a:hover {
+		  color: #1abc9c;
+		}
+
+
+		/************************************************************************************************
+		div.post p.comments {
+		  color: #999999;
+		  font-size: 16px;
+		  background-color:yellow;
+		}
+		div.post p.comments a {
+		  color: #999999;
+		}
+		div.post p.comments a:hover {
+		  color: #1abc9c;
 		}
 		
 	/* Image */
