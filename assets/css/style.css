@@ -231,17 +231,97 @@
 			{
 				color: #aaa;
 			}
-		.posts h2{
+			
+		/* Blog Posts */
+		.post h2{
 			background-color:#434303;
 			color:#fff;
 			padding:0.3em 0.3em 0.3em 0;
 			font:normal normal 1.7em BBCNassim;
 		}
 		
-		.posts h2 a, .posts h2 a:link, .posts h2 a:visited{
+		.post h2 a, .post h2 a:link, .post h2 a:visited{
 			color:#fff;
 		}
-		.posts h2 a:hover{color:#D9D9CD;}
+		.post h2 a:hover{color:#D9D9CD;}
+		
+		div.post div.post-info {
+		  display: block;
+		  clear: both;
+		  width: 100%;
+		  padding: 0 0 20px 0;
+		}
+		div.post div.post-info:after {
+		  visibility: hidden;
+		  display: block;
+		  font-size: 0;
+		  content: " ";
+		  clear: both;
+		  height: 0;
+		}
+		div.post div.post-info:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		div.post div.post-info .info-left {
+		  width: 49%;
+		  float: right;
+		}
+		div.post div.post-info .info-right {
+		  width: 49%;
+		  float: left;
+		  text-align: left;
+		}
+		div.post div.post-info .info-right a {
+			background-color:#434303;
+			color:#fff;
+		}
+		div.post div.post-info p.date {
+		  color: #999999;
+		}
+		div.post div.post-comments {
+		  padding-top: 30px;
+		}
+		div.post .socialbar-container {
+		  padding-top: 20px;
+		}
+		div.post .socialbar-container a:hover {
+		  color: #000000;
+		}
+		div.post ul.post-tags {
+		  display: block;
+		  padding: 20px 0 0 0;
+		  margin: 0;
+		}
+		div.post ul.post-tags li {
+		  display: inline-block;
+		  margin: 0;
+		  padding: 0;
+		}
+		div.post ul.post-tags li a {
+		  font-size: 14px;
+		  line-height: 14px;
+		  padding: 4px 8px 4px 8px;
+		  -webkit-border-radius: 10px;
+		  -moz-border-radius: 10px;
+		  border-radius: 10px;
+		  margin: 0 5px 0 0;
+		  display: inline-block;
+		  background-color: #1abc9c;
+		  color: #ffffff;
+		}
+		div.post ul.post-tags li a:hover {
+		  background-color: #000000;
+		}
+		div.post div.post-body ul.post-tags {
+		  margin: 0;
+		  padding: 20px 0 0 0;
+		}
+		div.post div.post-body ul.post-tags li {
+		  margin: 0;
+		  padding: 0;
+		}
 		
 	/* Image */
 

@@ -101,7 +101,7 @@
 						  
 						{% if posts %}
 						{% for post in posts %}
-						<div class="posts">
+						<div class="post">
 							<header>
 								<h2><a href="{{ post.permalink }}#posts">{{ post.title }}</a></h2>
 							</header>
@@ -109,6 +109,7 @@
 								{{ post.content }}
 							</div>
 
+								<div class="post-info">
 								<div class="post-info">
 								  <div class="info-left">
 									<p class="date">{{ post.created_at|format_date }}</p>
