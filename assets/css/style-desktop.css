@@ -243,7 +243,7 @@
 			{
 				display: block;
 				position: absolute;
-				right: -1px;
+				left: -1px;
 				top: 0;
 				height: 100%;
 				text-decoration: none;
@@ -260,7 +260,7 @@
 				{
 					display: block;
 					position: absolute;
-					right: 0;
+					left: 0;
 					top: 50%;
 					margin-top: -1.375em;
 					width: 2.75em;
@@ -301,17 +301,17 @@
 			#me header
 			{
 				position: absolute;
-				left: 0;
+				right: 0;
 				top: 0;
-				width: 100%;
+				width: 50%;
 				height: 100%;
-				margin-left: 2.5em;
+				margin-right: 2.5em;
 			}
 			
 				#me header > h1
 				{
 					position: absolute;
-					left: 0;
+					right: 0;
 					bottom: 52.5%;
 					margin: 0;
 				}
@@ -319,16 +319,16 @@
 				#me header > p 
 				{
 					position: absolute;
-					left: 0;
+					right: 0;
 					top: 52.5%;
 					font-size: 1.5em;
 					margin-top: 0;
 				}
 
 /*********************************************************************************/
-/* Footer                                                                        */
+/* Footer                                                                    						    */
 /*********************************************************************************/
-
+ 
 	#footer
 	{
 		text-align: center;
