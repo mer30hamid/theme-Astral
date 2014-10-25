@@ -82,11 +82,11 @@
 					<!-- Me -->
 					<article id="me" class="panel">
 						<header>
-							<h1>{{ site.name }}</h1>
+							<h1><a href="{{ site.base_url }}" title="صفحه آغازین">{{ site.name }}</a></h1>
 									{% if site.bio %}<p id="bio">{{ site.bio }}</p>{% endif %}
 						</header>
 					<a href="#posts" class="jumplink pic">
-						<span class="arrow icon fa-chevron-right"><span>بازدید از مطالب من</span></span>
+						<span class="arrow icon fa-chevron-left"><span>بازدید از مطالب من</span></span>
 						<img src="{{ site.avatar }}" alt="{{ site.author }}" />
 					</a>
 					</article>
