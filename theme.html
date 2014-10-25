@@ -58,7 +58,7 @@
 		-->
 	</head>
 	<body>
-    {% if is_login %}
+   {% if is_login %} 
       {{ login_form }}
     {% else  %}
 		<!-- Wrapper-->
@@ -117,7 +117,7 @@
 									<p class="read-more"><a href="{{ post.permalink }}#posts">ادامه مطلب &raquo;</a></p>
 								  </div>
 								</div>								
-
+						</div>
 							
 						{% endfor %}
 
@@ -200,12 +200,11 @@
 									  </div>
 									</div>
 								  </div>
-						</div>
-					</article>
 
-    {% endif %}
+					    {% endif %}
+					</article>
 							
-				{% endif %}
+	{% endif %}
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
