@@ -1,0 +1,10 @@
+diff a/assets/css/style-desktop.css b/assets/css/style-desktop.css	(rejected hunks)
+@@ -260,7 +260,7 @@
+ 				{
+ 					display: block;
+ 					position: absolute;
+-					right: 0;
++					left: 0;
+ 					top: 50%;
+ 					margin-top: -1.375em;
+ 					width: 2.75em;
