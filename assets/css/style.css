@@ -15,10 +15,10 @@
 	/********** FONT ************/
 		@font-face{
 			font-family: 'BBCNassim';
-			src: url('http://f.manmote.com/font/BBCNassim.eot');
+			src: url('http://demo.hamid.ml/fonts/BBCNassim.eot');
 			src: local('☺'),
-				url('http://f.manmote.com/font/BBCNassim.woff') format('woff'),
-				url('http://f.manmote.com/font/BBCNassim.ttf') format('truetype');
+				url('http://demo.hamid.ml/fonts/BBCNassim.woff') format('woff'),
+				url('http://demo.hamid.ml/fonts/BBCNassim.ttf') format('truetype');
 			font-weight: normal;
 			font-style: normal;
 		}
