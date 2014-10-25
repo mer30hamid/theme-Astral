@@ -252,7 +252,8 @@
 			
 				#me .pic img
 				{
-					position: relative;
+					position: absolute;
+					left: 0;
 					display: block;
 					height: 100%;
 				}
