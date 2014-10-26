@@ -137,9 +137,13 @@
 						{% if pagination.prev %}<a href="{{ pagination.prev }}#posts" class="post-prev">&larr; مطالب قدیمی تر</a>{% endif %}
 						{% if pagination.next %}<a href="{{ pagination.next }}#posts" class="post-next">مطالب جدید تر &rarr;</a>{% endif %}
 					  </div>
+							</article> <!-- posts -->
+						</div> <!-- main -->
 					   {% endif %}
 					  {% else %}
 						<h4 class="sub-heading span6">هیچ مطلبی وجود ندارد :(</h4>
+							</article> <!-- posts -->
+						</div> <!-- main -->
 					  {% endif %}
 
 						    {% elif post %}
@@ -170,11 +174,11 @@
 											{{ theme.social.bar }}
 
 											{% if post.tags %}
-											<ul class="post-tags">
-											{% for tag in post.tags %}
-											  <li><a href="/tag/{{ tag }}#posts">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
-											{% endfor %}
-											</ul>
+												<ul class="post-tags">
+												{% for tag in post.tags %}
+												  <li><a href="/tag/{{ tag }}#posts">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
+												{% endfor %}
+												</ul>
 											{% endif %}
 									    </div>
 									  <div class="post-footer">
@@ -182,24 +186,25 @@
 									  </div>
 									</div>
 								</div>
-						{% if site.disqus %}
-						</article>
-				</div>
-						<div id="comments" class="post-comments">
-							<h2>بحث و گفتگو</h2>
-							<div id="disqus_thread"></div>
-							<script>
-								var disqus_shortname = '{{ site.disqus }}';
-								var disqus_url = '{{site.base_url}}{{ post.permalink }}';
-								(function() {
-									var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-									dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-									(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-								})();
-							</script>
-						</div>
-						{% endif %}
-						{% elif post.type == 'page' %}
+								</article> <!-- posts -->
+							</div> <!-- main -->
+								{% if site.disqus %}
+								<div id="comments" class="post-comments">
+									<h2>بحث و گفتگو</h2>
+									<div id="disqus_thread"></div>
+									<script>
+										var disqus_shortname = '{{ site.disqus }}';
+										var disqus_url = '{{site.base_url}}{{ post.permalink }}';
+										(function() {
+											var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+											dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+											(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+										})();
+									</script>
+								</div>
+								{% endif %} 
+
+							{% elif post.type == 'page' %}
 
 								  <div class="span6 offset1 posts">
 									<div class="post whole span6">
@@ -212,16 +217,15 @@
 									  </div>
 									</div>
 								  </div>
-						</article>
-				</div>
-						{% else %}
-						</article>
-				</div>
-						{% endif %}
-		</div>
+								</article> <!-- posts -->
+							</div> <!-- main -->
+							{% endif %} <!--End For post types -->
+
+
+		</div> <!-- wrapper -->
 				
 							
-	{% endif %}
+	{% endif %} 
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
