@@ -253,13 +253,12 @@
 							});
 
 							//solve chrome problem and auto show posts section
-							var url_l = "{{ site.base_url }}".length + 2;
+							var url_l=("{{ site.base_url }}").length+2;
 							if($(location).attr('href').length>url_l){
-								$("#homeBtn").trigger('click');
-								var delay=1000;//1 seconds
-								setTimeout(function(){
+								$("#me").on("fadeInComplete",function(){
 									$("#postsBtn").trigger('click');
-								},delay); 
+								});
+								$("#homeBtn").trigger('click');
 							}							
 						});
 					</script>
