@@ -10,8 +10,31 @@
 		{% endif %}
 		| {{ site.name }}
 	</title>
-		
-		
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="author" content="{{ site.author }}">
+	<meta name="description" content="{{ site.bio }}">
+
+
+	<!-- OpenGraph tags -->
+	<meta property="og:site_name" content="{{ site.name }}">
+	<meta property="og:image" content="{{ site.avatar }}">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ site.name }}">
+	<meta property="og:url" content="{{ site.base_url }}">
+	<meta property="og:description" content="{{ site.bio }}">		
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@{{ site.twitter }}">
+	<meta name="twitter:creator" content="@{{ site.twitter }}">
+	<meta name="twitter:image:src" content="{{ site.avatar }}">
+	<meta name="twitter:domain" content="{{ site.base_url }}">
+	
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.atom_url }}">
+	
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script type = "text/javascript" src="{{ assets('js/skel.min.js') }}"></script>
 		<style type="text/css">
@@ -214,7 +237,7 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; تمامی حقوق محفوظ است.</li><li>طرح بر اساس: <a href="http://html5up.net">HTML5 UP</a></li><li>نیرو گرفته از postach.io.</li>
 							
 							{{ footer_meta }}
 					<script type = "text/javascript">
