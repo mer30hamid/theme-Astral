@@ -109,6 +109,25 @@
 						<img src="{{ site.avatar }}" alt="{{ site.author }}" />
 					</a>
 					</article>
+					
+					<!-- all_site_tags -->
+					<article id="tags" class="panel">
+						<header>
+							<h2>برچسب های مطالب سایت</h2>
+						</header>
+						<div class="post">
+								{% if site.tags %}
+									<ul class="post-tags">
+									{% for tag in site.tags %}
+										<li><a href="/tag/{{ tag.name }}">#{{ tag.name }}</a></li>
+									{% endfor %}
+									</ul>
+								{% else %}
+									<p> هیچ برچسبی وجود ندارد ! </p>
+								{% endif %}
+						</div>									
+					</article>	
+
 
 					<!-- posts --> 
 					<article id="posts" class="panel">
@@ -227,33 +246,15 @@
 									</div>
 								  </div>
 								</article> <!-- posts -->
-								
-								
+						</div> <!-- main -->
 							
 								
 								
 							
 							{% endif %} <!--End For post types -->
 							
-							<!-- all_site_tags -->
-								<article id="tags" class="panel">
-									<header>
-										<h2>برچسب های مطالب سایت</h2>
-									</header>
-									<div class="post">
-											{% if site.tags %}
-												<ul class="post-tags">
-												{% for tag in site.tags %}
-													<li><a href="/tag/{{ tag.name }}">#{{ tag.name }}</a></li>
-												{% endfor %}
-												</ul>
-											{% else %}
-												<p> هیچ برچسبی وجود ندارد ! </p>
-											{% endif %}
-									</div>									
-								</article>	
 							
-							</div> <!-- main -->
+
 
 		</div> <!-- wrapper -->
 				
