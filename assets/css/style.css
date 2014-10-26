@@ -322,6 +322,9 @@
 		div.post-comments {
 			/*color: #999999;*/
 			font-size: 16px;
+			background-color:#fff;
+			padding:5px;
+			margin:5px;
 		}
 		div.post-comments a {
 		  /*color: #999999;*/
