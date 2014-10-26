@@ -87,11 +87,6 @@
 				<a id="postsBtn" href="#posts" class="icon fa-newspaper-o"><span>مطالب</span></a>
 				<a id="tagsBtn" href="#tags" class="icon fa-folder"><span>دسته بندی</span></a>
 				<a href="#contact" class="icon fa-envelope" rel="contactus" onclick="$('.bcf-content').css('display','block')"><span>تماس</span></a>
-				<script type = "text/javascript">
-					var bcf_settings = { buttonText:'تماس با من', buttonTop:'30%', language:'fa_IR' };
-				</script>
-				<script type = "text/javascript" src="http://bettercontactform.com/contact/media/3/a/3aec0e5beffbfd740d5b248bd9d32f2fe762e3bd.js"></script>
-
 				<a href="#" class="icon fa-twitter"><span>تویتر</span></a>
 			</nav>
 			
@@ -261,11 +256,11 @@
 							
 	{% endif %} 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; تمامی حقوق محفوظ است.</li><li>طرح بر اساس: <a href="http://html5up.net">HTML5 UP</a></li><li>نیرو گرفته از postach.io.</li>
-							
-							{{ footer_meta }}
+				<div id="footer">
+					<ul class="copyright">
+						<li>&copy; تمامی حقوق محفوظ است.</li><li>طرح بر اساس: <a href="http://html5up.net">HTML5 UP</a></li><li>نیرو گرفته از postach.io.</li>
+					</ul>
+						{{ footer_meta }}
 					<script type = "text/javascript">
 						(function(e){var t={resizeSpeed:600,fadeSpeed:300,sizeFactor:11.5,sizeMin:15,sizeMax:20};skel.init({reset:"full",pollOnce:true,breakpoints:{global:{range:"*",href:"{{ assets('css/style.css') }}"},desktop:{range:"737-",href:"{{ assets('css/style-desktop.css') }}",containers:1200,grid:{gutters:25},viewport:{width:1080,scalable:false}},mobile:{range:"-736",href:"{{ assets('css/style-mobile.css') }}",containers:"100%",grid:{collapse:true,gutters:10},viewport:{scalable:false}}}});var n=e(window);n.on("load",function(){var r=e("body"),i=e("#main"),s=i.find(".panel"),o=e("html,body,window"),u=e("#footer"),a=e("#wrapper"),f=e("#nav"),l=f.find("a"),c=e(".jumplink"),h=e("form"),p=[],d=null,v=null,m=false,g=window.location.hash.substring(1);if(skel.vars.isTouch){t.fadeSpeed=0;t.resizeSpeed=0;l.find("span").remove()}if(skel.isActive("desktop")){r._resize=function(){var e=n.width()*n.height()/(1440*900);r.css("font-size",Math.min(Math.max(Math.floor(e*t.sizeFactor),t.sizeMin),t.sizeMax)+"pt");i.height(p[d].outerHeight());r._reposition()};r._reposition=function(){if(skel.vars.isTouch&&(window.orientation==0||window.orientation==180))a.css("padding-top",Math.max((n.height()-(p[d].outerHeight()+u.outerHeight()))/2-f.height(),30)+"px");else a.css("padding-top",(n.height()-p[v].height())/2-f.height()+"px")};s.each(function(s){var c=e(this),h=c.attr("id");p[h]=c;if(s==0){v=h;d=h}else c.hide();c._activate=function(c){if(m||d==h)return false;m=true;l.removeClass("active");l.filter('[href="#'+h+'"]').addClass("active");if(s==0)window.location.hash="#";else window.location.hash="#"+h;var v=parseInt(a.css("padding-top"))+p[h].outerHeight()+f.outerHeight()+u.outerHeight();if(v>n.height())a.addClass("tall");else a.removeClass("tall");u.fadeTo(t.fadeSpeed,1e-4);p[d].fadeOut(c?0:t.fadeSpeed,function(){e(this).trigger("fadeOutComplete");d=h;o.animate({scrollTop:0},t.resizeSpeed,"swing");r._reposition();i.animate({height:p[d].outerHeight()},c?0:t.resizeSpeed,"swing",function(){u.fadeTo(c?0:t.fadeSpeed,1);p[d].fadeIn(c?0:t.fadeSpeed,function(){m=false;e(this).trigger("fadeInComplete")})})})}});l.add(c).click(function(t){var n=e(this),r=n.attr("href"),i;if(r.substring(0,1)=="#"){t.preventDefault();t.stopPropagation();i=r.substring(1);if(i in p)p[i]._activate()}});n.resize(function(){if(!m)r._resize()});if(skel.vars.IEVersion<9)n.on("resize",function(){a.css("min-height",n.height())});if(h.length>0){if(skel.vars.IEVersion<10){e.fn.n33_formerize=function(){var t=new Array,n=e(this);n.find("input[type=text],textarea").each(function(){var t=e(this);if(t.val()==""||t.val()==t.attr("placeholder")){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}}).blur(function(){var t=e(this);if(t.attr("name").match(/_fakeformerizefield$/))return;if(t.val()==""){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}}).focus(function(){var t=e(this);if(t.attr("name").match(/_fakeformerizefield$/))return;if(t.val()==t.attr("placeholder")){t.removeClass("formerize-placeholder");t.val("")}});n.find("input[type=password]").each(function(){var t=e(this);var n=e(e("<div>").append(t.clone()).remove().html().replace(/type="password"/i,'type="text"').replace(/type=password/i,"type=text"));if(t.attr("id")!="")n.attr("id",t.attr("id")+"_fakeformerizefield");if(t.attr("name")!="")n.attr("name",t.attr("name")+"_fakeformerizefield");n.addClass("formerize-placeholder").val(n.attr("placeholder")).insertAfter(t);if(t.val()=="")t.hide();else n.hide();t.blur(function(t){t.preventDefault();var n=e(this);var r=n.parent().find("input[name="+n.attr("name")+"_fakeformerizefield]");if(n.val()==""){n.hide();r.show()}});n.focus(function(t){t.preventDefault();var n=e(this);var r=n.parent().find("input[name="+n.attr("name").replace("_fakeformerizefield","")+"]");n.hide();r.show().focus()});n.keypress(function(e){e.preventDefault();n.val("")})});n.submit(function(){e(this).find("input[type=text],input[type=password],textarea").each(function(t){var n=e(this);if(n.attr("name").match(/_fakeformerizefield$/))n.attr("name","");if(n.val()==n.attr("placeholder")){n.removeClass("formerize-placeholder");n.val("")}})}).bind("reset",function(n){n.preventDefault();e(this).find("select").val(e("option:first").val());e(this).find("input,textarea").each(function(){var t=e(this);var n;t.removeClass("formerize-placeholder");switch(this.type){case"submit":case"reset":break;case"password":t.val(t.attr("defaultValue"));n=t.parent().find("input[name="+t.attr("name")+"_fakeformerizefield]");if(t.val()==""){t.hide();n.show()}else{t.show();n.hide()}break;case"checkbox":case"radio":t.attr("checked",t.attr("defaultValue"));break;case"text":case"textarea":t.val(t.attr("defaultValue"));if(t.val()==""){t.addClass("formerize-placeholder");t.val(t.attr("placeholder"))}break;default:t.val(t.attr("defaultValue"));break}});window.setTimeout(function(){for(x in t)t[x].trigger("formerize_sync")},10)});return n};h.n33_formerize()}}if(skel.vars.IEVersion<9)e(":last-child").addClass("last-child");n.trigger("resize");if(g&&g in p)p[g]._activate(true);a.fadeTo(400,1)}})})(jQuery)
 						
@@ -295,9 +290,9 @@
 								});
 							}													
 						});
+						var bcf_settings = { buttonText:'تماس با من', buttonTop:'30%', language:'fa_IR' };
 					</script>
-							
-						</ul>
-					</div>
+					<script type = "text/javascript" src="http://bettercontactform.com/contact/media/3/a/3aec0e5beffbfd740d5b248bd9d32f2fe762e3bd.js"></script>							
+				</div>
 	</body>
 </html>
