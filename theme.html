@@ -84,7 +84,8 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<a id="homeBtn" href="#me" class="icon fa-home active"><span>خانه</span></a>
-				<a id="postsBtn" href="#posts" class="icon fa-folder"><span>مطالب</span></a>
+				<a id="postsBtn" href="#posts" class="icon fa-newspaper-o"><span>مطالب</span></a>
+				<a id="tagsBtn" href="#tags" class="icon fa-folder"><span>دسته بندی</span></a>
 				<a href="#contact" class="icon fa-envelope" rel="contactus" onclick="$('.bcf-content').css('display','block')"><span>تماس</span></a>
 				<script type = "text/javascript">
 					var bcf_settings = { buttonText:'تماس با من', buttonTop:'30%', language:'fa_IR' };
@@ -195,6 +196,26 @@
 									</div>
 								</div>
 								</article> <!-- posts -->
+								
+								<!-- site tags -->
+								<article id="tags" class="panel">
+									<header>
+										<h2>برچسب های مطالب سایت</h2>
+									</header>
+									<div class="post">
+											{% if site.tags %}
+												<ul class="post-tags">
+												{% for tag in site.tags %}
+													<li><a href="/tag/{{ tag.name }}">#{{ tag.name }}</a></li>
+												{% endfor %}
+												</ul>
+											{% else %}
+												<p> هیچ برچسبی وجود ندارد ! </p>
+											{% endif %}
+									</div>									
+								</article>								
+								
+								
 							</div> <!-- main -->
 								{% if site.disqus %}
 								<div id="comments" class="post-comments">
@@ -258,7 +279,9 @@
 							if($(location).attr('href').length>base_url.length+2){
 								
 								$("#me").on("fadeInComplete",function(){
-									$("#postsBtn").trigger('click');
+									setTimeout(function(){
+										$("#postsBtn").trigger('click');
+									},1000);
 								});
 								
 								$("#posts").one("fadeInComplete",function(){
