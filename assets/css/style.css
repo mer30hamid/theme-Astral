@@ -320,12 +320,11 @@
 		}
 		
 		div.post-comments {
-			color: #999999;
+			/*color: #999999;*/
 			font-size: 16px;
-			min-height:610px;
 		}
 		div.post-comments a {
-		  color: #999999;
+		  /*color: #999999;*/
 		}
 		div.post-comments a:hover {
 		  color: #1abc9c;
