@@ -182,22 +182,6 @@
 									  </div>
 									</div>
 								</div>
-
-								{% elif post.type == 'page' %}
-
-								  <div class="span6 offset1 posts">
-									<div class="post whole span6">
-									  <h1>{{ page.title }}</h1>
-									  <div class="post-body" data-type-cleanup="true">
-										{{ page.content }}
-									  </div>
-									  <div class="post-footer">
-										<p class="back"><a href="/">&laquo; صفحه نخست</a></p>
-									  </div>
-									</div>
-								  </div>
-
-					   
 					</article>
 				</div>
 						{% if site.disqus %}
@@ -215,8 +199,20 @@
 							</script>
 						</div>
 						{% endif %}
-				
-				 {% endif %}
+						{% elif post.type == 'page' %}
+
+								  <div class="span6 offset1 posts">
+									<div class="post whole span6">
+									  <h1>{{ page.title }}</h1>
+									  <div class="post-body" data-type-cleanup="true">
+										{{ page.content }}
+									  </div>
+									  <div class="post-footer">
+										<p class="back"><a href="/">&laquo; صفحه نخست</a></p>
+									  </div>
+									</div>
+								  </div>
+						{% endif %}
 		</div>
 				
 							
