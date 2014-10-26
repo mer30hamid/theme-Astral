@@ -253,13 +253,20 @@
 							});
 
 							//solve chrome problem and auto show posts section
-							var url_l=("{{ site.base_url }}").length+2;
+							var base_url="{{ site.base_url }}";
+							var url_l=base_url.length+2;
+							
 							if($(location).attr('href').length>url_l){
+								
 								$("#me").on("fadeInComplete",function(){
 									$("#postsBtn").trigger('click');
 								});
-								$("#homeBtn").trigger('click');
-							}							
+								
+								$("#posts").one("fadeInComplete",function(){
+									$("#homeBtn").trigger('click');
+									$("#homeBtn").attr("href", base_url);
+								});
+							}													
 						});
 					</script>
 							
