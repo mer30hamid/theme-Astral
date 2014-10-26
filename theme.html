@@ -83,8 +83,8 @@
 		<div id="wrapper">
 			<!-- Nav -->
 			<nav id="nav">
-				<a href="#me" class="icon fa-home active"><span>خانه</span></a>
-				<a href="#posts" class="icon fa-folder"><span>مطالب</span></a>
+				<a id="homeBtn" href="#me" class="icon fa-home active"><span>خانه</span></a>
+				<a id="postsBtn" href="#posts" class="icon fa-folder"><span>مطالب</span></a>
 				<a href="#contact" class="icon fa-envelope" rel="contactus" onclick="$('.bcf-content').css('display','block')"><span>تماس</span></a>
 				<script type = "text/javascript">
 					var bcf_settings = { buttonText:'تماس با من', buttonTop:'30%', language:'fa_IR' };
@@ -251,6 +251,16 @@
 							$("#posts").on("fadeInComplete",function(){
 								$("#comments").show();
 							});
+
+							//solve chrome problem and auto show posts section
+							var url_l = "{{ site.base_url }}".length + 2;
+							if($(location).attr('href').length>url_l){
+								$("#homeBtn").trigger('click');
+								var delay=1000;//1 seconds
+								setTimeout(function(){
+									$("#postsBtn").trigger('click');
+								},delay); 
+							}							
 						});
 					</script>
 							
