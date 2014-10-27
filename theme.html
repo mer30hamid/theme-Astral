@@ -85,7 +85,7 @@
 			<nav id="nav">
 				<a id="homeBtn" href="#me" class="icon fa-home active"><span>خانه</span></a>
 				<a id="postsBtn" href="#posts" class="icon fa-newspaper-o"><span>مطالب</span></a>
-				<a id="tagsBtn" href="#tags" class="icon fa-folder"><span>دسته بندی</span></a>
+				<a id="tagsBtn" href="#tags" class="icon fa-folder"><span>موضوعات</span></a>
 			</nav>
 			
 				<!-- Main -->
@@ -270,23 +270,19 @@
 							$("#posts").on("fadeInComplete",function(){
 								$("#comments").show();
 							});
-
-							//solve chrome problem and auto show posts section
-							var base_url="{{ site.base_url }}";
 							
-							if($(location).attr('href').length>base_url.length+2){
-								
+							{% if not is_home %}
+							//solve chrome problem and auto show posts section
 								$("#me").on("fadeInComplete",function(){
 									setTimeout(function(){
 										$("#postsBtn").trigger('click');
 									},1000);
-								});
-								
+								});					
 								$("#posts").one("fadeInComplete",function(){
 									$("#homeBtn").trigger('click');
-									$("#homeBtn").attr("href", base_url);
+									$("#homeBtn").attr("href", "{{ site.base_url }}");
 								});
-							}													
+							{% endif %}
 						});
 				</script>
 				</div>
