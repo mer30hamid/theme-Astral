@@ -270,19 +270,23 @@
 							$("#posts").on("fadeInComplete",function(){
 								$("#comments").show();
 							});
-							
-							{% if not is_home %}
+
 							//solve chrome problem and auto show posts section
+							var base_url="{{ site.base_url }}";
+							
+							if($(location).attr('href').length>base_url.length+2){
+								
 								$("#me").on("fadeInComplete",function(){
 									setTimeout(function(){
 										$("#postsBtn").trigger('click');
 									},1000);
-								});					
+								});
+								
 								$("#posts").one("fadeInComplete",function(){
 									$("#homeBtn").trigger('click');
-									$("#homeBtn").attr("href", "{{ site.base_url }}");
+									$("#homeBtn").attr("href", base_url);
 								});
-							{% endif %}
+							}													
 						});
 				</script>
 				</div>
